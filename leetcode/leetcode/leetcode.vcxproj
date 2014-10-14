@@ -80,11 +80,13 @@
   <ItemGroup>
     <ClCompile Include="01_maximum_product_subarray.cpp" />
     <ClCompile Include="02_reverse_words_in_a_string.cpp" />
+    <ClCompile Include="03_evaluate_reverse_polish_notation.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_maximum_product_subarray.h" />
     <ClInclude Include="02_reverse_words_in_a_string.h" />
+    <ClInclude Include="03_evaluate_reverse_polish_notation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

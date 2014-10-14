@@ -24,12 +24,18 @@
     <ClCompile Include="02_reverse_words_in_a_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="03_evaluate_reverse_polish_notation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_maximum_product_subarray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="02_reverse_words_in_a_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="03_evaluate_reverse_polish_notation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
