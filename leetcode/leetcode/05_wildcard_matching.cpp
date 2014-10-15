@@ -26,61 +26,29 @@ isMatch("aab", "c*a*b") -> false
 */
 
 bool isMatch(const char *s, const char *p) {
-	int source_pos = 0;
-	int pattern_pos = 0;
-	char source = s[source_pos];
-	char pattern = p[pattern_pos];
+	const char* wildchar = nullptr;
+	const char* ss = s;
+	while (*s){
+		//advancing both pointers when (both characters match) or ('?' found in pattern)
+		//note that *p will not advance beyond its length 
+		if ((*p == '?') || (*p == *s)){ s++; p++; continue; }
 
-	while(source != '\0' && pattern !='\0')
-	{
+		// * found in pattern, track index of *, only advancing pattern pointer 
+		if (*p == '*'){ wildchar = p++; ss = s; continue; }
 
-		if(pattern != '*')
-		{
-			if(pattern == '?' || pattern == source){
-				source_pos++;
-				pattern_pos++;
-			}
-			else 
-			{
-				return false;
-			}
-		}
-		else
-		{
-			pattern_pos ++;
-			pattern = p[pattern_pos];
-			if(pattern == '\0')
-			{
-				return true;
-			}
-			else
-			{
-				// find the lastest match of this character
-				int temp_pos = source_pos;
-				char temp = s[temp_pos];
-				int last_match_pos = -1;
-				while (temp!='\0')
-				{
-					if(temp == pattern || pattern =='?' || pattern == '*')
-					{
-						last_match_pos = temp_pos;
-					}
-					temp_pos ++;
-					temp = s[temp_pos];
-				}
+		//current characters didn't match, last pattern pointer was *, current pattern pointer is not *
+		//only advancing pattern pointer
+		if (wildchar){ p = wildchar + 1; s = ++ss; continue; }
 
-				if(last_match_pos == -1)
-					return false;
-
-				source_pos = last_match_pos;
-			}
-		}
-
-		source = s[source_pos];
-		pattern = p[pattern_pos];
+		//current pattern pointer is not star, last patter pointer was not *
+		//characters do not match
+		return false;
 	}
 
-	return source == '\0' && (pattern =='\0' || (pattern == '*' && p[pattern_pos+1] == '\0'));
+	//check for remaining characters in pattern
+	while (*p == '*'){ p++; }
+
+	return !*p;
 }
 
 void isMatch_test()
@@ -101,6 +69,6 @@ void isMatch_test()
 	match = isMatch("c", "*?*");
 	match = isMatch("hi", "*?");
 
-	// would fail...
 	match = isMatch("ab", "*?*?");
+	match = isMatch("abcd", "*b*d");
 }
