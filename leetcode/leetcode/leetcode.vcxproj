@@ -82,6 +82,7 @@
     <ClCompile Include="02_reverse_words_in_a_string.cpp" />
     <ClCompile Include="03_evaluate_reverse_polish_notation.cpp" />
     <ClCompile Include="04_lru_cache.cpp" />
+    <ClCompile Include="05_wildcard_matching.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,7 @@
     <ClInclude Include="02_reverse_words_in_a_string.h" />
     <ClInclude Include="03_evaluate_reverse_polish_notation.h" />
     <ClInclude Include="04_lru_cache.h" />
+    <ClInclude Include="05_wildcard_matching.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

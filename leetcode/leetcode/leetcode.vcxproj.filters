@@ -27,6 +27,12 @@
     <ClCompile Include="03_evaluate_reverse_polish_notation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="04_lru_cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="05_wildcard_matching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_maximum_product_subarray.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="03_evaluate_reverse_polish_notation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_lru_cache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="05_wildcard_matching.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
