@@ -1,6 +1,6 @@
 #include<list>
 #include<unordered_map>
-
+using namespace std;
 struct LRUCacheEntry
 {
 	int key;
